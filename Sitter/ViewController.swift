@@ -9,7 +9,11 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
+    
+    let a = 0
+    
     
     //The login script url make sure to write the ip instead of localhost
     //you can get the ip using ifconfig command in terminal
