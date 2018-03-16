@@ -34,8 +34,10 @@ class ViewController: UIViewController
     //@IBOutlet weak var textFieldPassword: UITextField!
     
     //the button action function
+    
+    
+    
     @IBAction func buttonLogin(_ sender: UIButton) {
-        
         //getting the username and password
         let parameters: Parameters=[
             "username":textFieldUserName.text!,
@@ -64,7 +66,7 @@ class ViewController: UIViewController
                         let username = user.value(forKey: "nom") as! String
                         let userfirstname = user.value(forKey: "prenom") as! String
                         let useremail = user.value(forKey: "email") as! String
-                      
+                        
                         
                         //saving user values to defaults
                         self.defaultValues.set(userId, forKey: "userid")
@@ -87,6 +89,7 @@ class ViewController: UIViewController
         }
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //hiding the navigation button
@@ -96,11 +99,11 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         //if user is already logged in switching to profile screen
-        if defaultValues.string(forKey: "username") != nil{
+        /*if defaultValues.string(forKey: "username") != nil{
             let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! WelcomeViewController
             self.navigationController?.pushViewController(profileViewController, animated: true)
             
-        }
+        }*/
     }
     
     override func didReceiveMemoryWarning() {
