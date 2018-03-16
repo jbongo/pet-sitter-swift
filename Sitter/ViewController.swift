@@ -24,9 +24,14 @@ class ViewController: UIViewController
     
     //the connected views
     //don't copy instead connect the views using assistant editor
-    @IBOutlet weak var labelMessage: UILabel!
+    
     @IBOutlet weak var textFieldUserName: UITextField!
+    
     @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var labelMessage: UILabel!
+    //@IBOutlet weak var labelMessage: UILabel!
+    //@IBOutlet weak var textFieldUserName: UITextField!
+    //@IBOutlet weak var textFieldPassword: UITextField!
     
     //the button action function
     @IBAction func buttonLogin(_ sender: UIButton) {
@@ -56,18 +61,21 @@ class ViewController: UIViewController
                         
                         //getting user values
                         let userId = user.value(forKey: "id") as! Int
-                        let userName = user.value(forKey: "username") as! String
-                        let userEmail = user.value(forKey: "email") as! String
-                        let userPhone = user.value(forKey: "phone") as! String
+                        let username = user.value(forKey: "nom") as! String
+                        let userfirstname = user.value(forKey: "prenom") as! String
+                        let useremail = user.value(forKey: "email") as! String
+                      
                         
                         //saving user values to defaults
                         self.defaultValues.set(userId, forKey: "userid")
-                        self.defaultValues.set(userName, forKey: "username")
-                        self.defaultValues.set(userEmail, forKey: "useremail")
-                        self.defaultValues.set(userPhone, forKey: "userphone")
+                        self.defaultValues.set(username, forKey: "username")
+                        self.defaultValues.set(userfirstname, forKey: "userfirstname")
+                        self.defaultValues.set(useremail, forKey: "useremail")
+                        
+                        
                         
                         //switching the screen
-                        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! ProfileViewController
+                        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! WelcomeViewController
                         self.navigationController?.pushViewController(profileViewController, animated: true)
                         
                         self.dismiss(animated: false, completion: nil)
@@ -89,7 +97,7 @@ class ViewController: UIViewController
         
         //if user is already logged in switching to profile screen
         if defaultValues.string(forKey: "username") != nil{
-            let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! ProfileViewController
+            let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! WelcomeViewController
             self.navigationController?.pushViewController(profileViewController, animated: true)
             
         }
