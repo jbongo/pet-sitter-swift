@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1400.8" y="1156.3718140929536"/>
         </scene>
-        <!--VCAccueil-->
+        <!--WelcomeViewController-->
         <scene sceneID="1TE-IX-sZo">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" title="VCAccueil" id="XsL-lc-PQl" customClass="WelcomeViewController" customModule="Sitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" title="WelcomeViewController" id="XsL-lc-PQl" customClass="WelcomeViewController" customModule="Sitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Snm-JH-x1Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,10 +162,28 @@
                                     <segue destination="bfa-gx-WqK" kind="show" id="waH-G3-yCx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="buttonLogout" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPc-SY-MPo">
+                                <rect key="frame" x="47" y="455" width="280" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonLogout:" destination="XsL-lc-PQl" eventType="touchUpInside" id="s3I-tQ-FSf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="labelUserName" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRI-vl-OON">
+                                <rect key="frame" x="107" y="524" width="161" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lGx-Ez-lt3"/>
                     </view>
+                    <connections>
+                        <outlet property="labelUserName" destination="kRI-vl-OON" id="uJJ-Tf-70P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nG-8l-u7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

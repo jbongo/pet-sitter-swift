@@ -62,7 +62,7 @@ class ViewController: UIViewController
                         let user = jsonData.value(forKey: "user") as! NSDictionary
                         
                         //getting user values
-                        let userId = user.value(forKey: "id") as! Int
+                        let userId = user.value(forKey: "id") as! String
                         let username = user.value(forKey: "nom") as! String
                         let userfirstname = user.value(forKey: "prenom") as! String
                         let useremail = user.value(forKey: "email") as! String
@@ -77,12 +77,12 @@ class ViewController: UIViewController
                         
                         
                         //switching the screen
-                        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! WelcomeViewController
-                        self.navigationController?.pushViewController(profileViewController, animated: true)
+                        let WelcomViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+                        self.navigationController?.pushViewController(WelcomViewController, animated: true)
                         
                         self.dismiss(animated: false, completion: nil)
                     }else{
-                        //error message in case of invalid credential
+                        //error message in case of invalid credentialq
                         self.labelMessage.text = "Invalid username or password"
                     }
                 }
